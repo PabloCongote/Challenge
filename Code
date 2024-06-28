@@ -1,0 +1,80 @@
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.junit.Assert;
+
+import java.util.concurrent.TimeUnit;
+
+public class InvoiceAutomation {
+
+    public static void main(String[] args) {
+        System.setProperty("webdriver.chrome.driver", "path_to_chromedriver");
+
+        WebDriver driver = new ChromeDriver();
+
+        driver.get("http://this_is_a_invoice_url");
+
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
+        try {
+            WebElement NumberField = driver.findElement(By.id("locatorInvoice1"));
+            quantityField.click();
+            invoiceNumberField.sendKeys("001");
+
+            WebElement DateField = driver.findElement(By.id("locatorDate"));
+            quantityField.click();
+            invoiceDateField.sendKeys("1990-04-27");
+
+            WebElement productField = driver.findElement(By.id("locatorProduct"));
+            quantityField.click();
+            productField.sendKeys("Product");
+
+            WebElement quantityField = driver.findElement(By.id("locatorQuantity"));
+            quantityField.click();
+            quantityField.sendKeys("10");
+
+            WebElement amountField = driver.findElement(By.id("locatorAmount"));
+            quantityField.click();
+            amountField.sendKeys("$10");
+
+
+            WebElement submitButton = driver.findElement(By.id("locatorSubmitButton"));
+            submitButton.click();
+
+            WebElement confirmationMessage = driver.findElement(By.id("locatorConfirmationMessage"));
+            Assert.assertTrue(confirmationMessage.isDisplayed(), "Message is not displayed");
+
+        }
+
+        try {
+            WebElement NumberField = driver.findElement(By.id("locatorInvoice1"));
+            quantityField.click();
+            invoiceNumberField.sendKeys("001");
+
+            WebElement DateField = driver.findElement(By.id("locatorDate"));
+            quantityField.click();
+            invoiceDateField.sendKeys("1990-04-27");
+
+            WebElement productField = driver.findElement(By.id("locatorProduct"));
+            quantityField.click();
+            productField.sendKeys("Product");
+
+            WebElement quantityField = driver.findElement(By.id("locatorQuantity"));
+            quantityField.click();
+            quantityField.sendKeys("0");
+
+            WebElement amountField = driver.findElement(By.id("locatorAmount"));
+            quantityField.click();
+            amountField.sendKeys("$10");
+
+
+            WebElement submitButton = driver.findElement(By.id("locatorSubmitButton"));
+            submitButton.click();
+
+            WebElement confirmationMessage = driver.findElement(By.id("locatorerrorQuantityMessage"));
+            Assert.assertTrue(quantityMessage.isDisplayed(), "Message is not displayed");
+
+        }
+    }
+}
