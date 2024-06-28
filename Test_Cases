@@ -69,9 +69,9 @@ Steps:
 
 ºNetwork connection error
 
-Summary:** The disconnection to the network must interrupt the process, but must show the reason as an error, implying that the invoice could not complete the process and it will not be stored in the DB.
-Description:** Before submitting the invoice, disconnect from the network then click on the "submit" button
-Expected:** When you lose connection to the network, an error should appear and the invoice should not be saved in the database.
+Summary: The disconnection to the network must interrupt the process, but must show the reason as an error, implying that the invoice could not complete the process and it will not be stored in the DB.
+Description: Before submitting the invoice, disconnect from the network then click on the "submit" button
+Expected: When you lose connection to the network, an error should appear and the invoice should not be saved in the database.
 Steps:
   1. Open Invoice creation page
   2. Complete all fields 
