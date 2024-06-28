@@ -73,7 +73,7 @@ public class InvoiceAutomation {
             submitButton.click();
 
             WebElement confirmationMessage = driver.findElement(By.id("locatorerrorQuantityMessage"));
-            Assert.assertTrue(quantityMessage.isDisplayed(), "Message is not displayed");
+            Assert.assertTrue(quantityMessage.isDisplayed(), "The accepted quantity must be greater than 0");
 
         }
     }
