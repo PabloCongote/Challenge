@@ -1,0 +1,87 @@
+Challenge test cases
+
+ºInvoice Creation:
+
+Summary: The creation of an invoice must contain the mandatory values, it must be completed with all the required information, with an amount greater than zero, when completing the invoice and clicking submit it must display a satisfactory message and a storage in the database
+Description: Fill out all mandatory fields correctly and submit the form.
+Expected: Confirmation message is displayed and Invoice is saved 
+Steps:
+  1. Open Invoice creation page
+  2. Complete all fields 
+  3. Click on submit button 
+  4. Verify Confirmation message is displayed and Invoice is stored in DB
+
+ºMandatory Field:
+
+Summary: By not completing the mandatory fields on the invoice and trying to complete the process, it should throw an error and show the mandatory fields highlighted.
+Description: Attempt to submit the form without filling any mandatory fields.
+Expected: The invoice should not be able to be completed, a message should appear, or highlight required fields that were not filled out
+Steps:
+  1. Open Invoice creation page
+  2. Complete the Invoice and leave one of the mandatory fields empty (repeat as many times as mandatory fields exist) 
+  3. Click on submit button 
+  4. Verify error message or highlight in the mandatory fields is displayed 
+
+ºQuantity Field Default Behavior:
+
+Summary: By default the value of the quantity must be 1, it can be modified but when starting each invoice the value will always be 1
+Description: Navigate to the invoice creation page and go to the Quantity field without entering any data.
+Expected: Quantity field should default to 
+Steps:
+  1. Open Invoice creation page
+  2. Go to quantity field 
+  3. Verify the value in the field is equal to “1”
+
+ºInvalid Quantity:
+
+Summary: The value of the quantity must always be greater than zero, if it is zero and trying to complete the process, an error must be thrown specifying that the quantity must be greater than zero
+Description: Enter '0' in the Quantity field and attempt to submit the form.
+Expected: Validation message should appear indicating that Quantity cannot be zero.
+Steps:
+  1. Open Invoice creation page
+  2. Complete all fields and select 0 in quantity field
+  3. Click on submit button 
+  4. Verify error message displayed “The accepted quantity must be greater than 0”
+
+ºDuplicate the invoice number:
+
+Summary: The invoice numbers will be treated as IDs so they must be unique when trying to duplicate the number of an already existing invoice the database must show an error but for security reasons it should not say what the error caused on the invoice is. You just have to mention that the fields must be reviewed
+Description: Enter an invoice number that is stored in the database in the invoice number field
+Expected: When submitting the invoice, a duplicate error message should be displayed
+Steps:
+  1. Open Data base
+  2. Copy a random invoice number
+  3. Open Invoice creation page
+  4. Complete all fields and paste the random invoice number in the number field
+  5. Click on submit button 
+  6. Verify error message “Verify entered values”
+
+ºSimultaneous creation:
+
+Summary: Creating simultaneous invoices should not cause conflict in their creation, as long as it meets the requirements, the invoices should be stored in the database with different invoice numbers
+Description: Simulate multiple users attempting to create invoices simultaneously.
+Expected: Ensure that each user's invoice is created correctly without interference or data corruption.
+Steps:
+  1. Open two taps with Invoice creation page
+  2. Complete all fields in both invoice
+  3. Click on submit button in both invoice
+  4. Verify that the confirmation message is displayed and that invoices are stored in the database with different invoice numbers
+
+ºNetwork connection error
+
+Summary:** The disconnection to the network must interrupt the process, but must show the reason as an error, implying that the invoice could not complete the process and it will not be stored in the DB.
+Description:** Before submitting the invoice, disconnect from the network then click on the "submit" button
+Expected:** When you lose connection to the network, an error should appear and the invoice should not be saved in the database.
+Steps:
+  1. Open Invoice creation page
+  2. Complete all fields 
+  3. Disconnect network 
+  4. Click on submit button in both invoice
+  5. Verify the error message displayed and the invoice is not stored in DB
+
+
+
+
+
+
+
